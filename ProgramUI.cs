@@ -9,6 +9,8 @@ namespace GoldBadge_ConsoleApps
     class ProgramUI
     {
         bool _keepRunning = true;
+        MenuRepository cafeRepository = new MenuRepository();
+        MenuItem cafeMenuItem = new MenuItem();
         public void Run()
         {
             while (_keepRunning)
@@ -38,7 +40,7 @@ namespace GoldBadge_ConsoleApps
             switch (Console.Read())
             {
                 case 1:
-                    Console.WriteLine("");
+                    
                     break;
 
                 case 2:
@@ -60,8 +62,17 @@ namespace GoldBadge_ConsoleApps
             }
         }
 
-        public void CreateOrUpdateItem()
+        public void CreateOrUpdateItem(bool createUpdate)
         {
+
+           if(createUpdate == true)
+            {
+                
+            }
+            else
+            {
+
+            }
 
         }
     }
