@@ -10,7 +10,7 @@ namespace GoldBadge_ConsoleApps
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Console.WriteLine("Komodo Cafe");
             ProgramUI KomodoCafeUI = new ProgramUI();
             KomodoCafeUI.Run();
         }

@@ -8,11 +8,13 @@ namespace GoldBadge_ConsoleApps
 {
     public class MenuRepository
     {
-        private List<MenuItem> _CafeRepo = new List<MenuItem>() { };
+        private readonly List<MenuItem> _CafeRepo = new List<MenuItem>() { };
+        public int _menuItemCount = 0;
 
         // Create Menu Items
         public bool CreateMenuItems(MenuItem MenuItem)
         {
+            _menuItemCount += 1;
             int repCount = _CafeRepo.Count;
 
             _CafeRepo.Add(MenuItem);
@@ -21,7 +23,6 @@ namespace GoldBadge_ConsoleApps
                 return true;
             else
                 return false;
-
         }
 
         //Read Menu Items
@@ -41,10 +42,15 @@ namespace GoldBadge_ConsoleApps
         }
 
         //Delete Menu Items
-        public void DeleteMenuItem(int mealNumber)
+        public bool DeleteMenuItem(int mealNumber)
         {
+            int repoCount = _CafeRepo.Count;
             _CafeRepo.Remove(_CafeRepo[mealNumber - 1]);
 
+            if (_CafeRepo.Count < repoCount)
+                return true; // item was deleted
+            else
+                return false; // item was not delted
         }
     }
 }
