@@ -1,0 +1,7 @@
+C:\Users\ckron\Desktop\ElevenFiftyProjects\gold_badge\GoldBadgeConsoleApps\GoldBadge_ConsoleApps\bin\Debug\GoldBadge_ConsoleApps.exe.config
+C:\Users\ckron\Desktop\ElevenFiftyProjects\gold_badge\GoldBadgeConsoleApps\GoldBadge_ConsoleApps\bin\Debug\GoldBadge_ConsoleApps.exe
+C:\Users\ckron\Desktop\ElevenFiftyProjects\gold_badge\GoldBadgeConsoleApps\GoldBadge_ConsoleApps\bin\Debug\GoldBadge_ConsoleApps.pdb
+C:\Users\ckron\Desktop\ElevenFiftyProjects\gold_badge\GoldBadgeConsoleApps\GoldBadge_ConsoleApps\obj\Debug\KomodoCafeConsole.csprojAssemblyReference.cache
+C:\Users\ckron\Desktop\ElevenFiftyProjects\gold_badge\GoldBadgeConsoleApps\GoldBadge_ConsoleApps\obj\Debug\KomodoCafeConsole.csproj.CoreCompileInputs.cache
+C:\Users\ckron\Desktop\ElevenFiftyProjects\gold_badge\GoldBadgeConsoleApps\GoldBadge_ConsoleApps\obj\Debug\GoldBadge_ConsoleApps.exe
+C:\Users\ckron\Desktop\ElevenFiftyProjects\gold_badge\GoldBadgeConsoleApps\GoldBadge_ConsoleApps\obj\Debug\GoldBadge_ConsoleApps.pdb

@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace GoldBadge_ConsoleApps
 {
-    public class KomodoCafe
+    public class MenuItem
     {
-        public KomodoCafe() { }
-        public KomodoCafe(int mealNumber, string mealName, string mealDescription, List<string> mealIngredients, decimal price) { }
+        public MenuItem() { }
+        public MenuItem(int mealNumber, string mealName, string mealDescription, List<string> mealIngredients, decimal price) { }
         public int MealNumber { get; set; }
         public string MealName { get; set; }
         public string MealDescription { get; set; }

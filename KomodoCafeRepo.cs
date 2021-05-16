@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace GoldBadge_ConsoleApps
 {
-    public class KomodoCafeRepo
+    public class MenuRepository
     {
-        private List<KomodoCafe> _CafeRepo = new List<KomodoCafe>() { };
+        private List<MenuItem> _CafeRepo = new List<MenuItem>() { };
 
         // Create Menu Items
-        public bool CreateMenuItems(KomodoCafe MenuItem)
+        public bool CreateMenuItems(MenuItem MenuItem)
         {
             int repCount = _CafeRepo.Count;
 
@@ -25,15 +25,15 @@ namespace GoldBadge_ConsoleApps
         }
 
         //Read Menu Items
-        public List<KomodoCafe> ReadMenuItems()
+        public List<MenuItem> ReadMenuItems()
         {
             return _CafeRepo;
         }
 
         //Update Menu Items
-        public void UpdateMenuItems(int mealNumber, KomodoCafe MenuItem)
+        public void UpdateMenuItems(int mealNumber, MenuItem MenuItem)
         {
-            KomodoCafe updateMenuItem = _CafeRepo[mealNumber - 1];
+            MenuItem updateMenuItem = _CafeRepo[mealNumber - 1];
             updateMenuItem.MealName = MenuItem.MealName;
             updateMenuItem.MealDescription = MenuItem.MealDescription;
             updateMenuItem.Ingredients = MenuItem.Ingredients;

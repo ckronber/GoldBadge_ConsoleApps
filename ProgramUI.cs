@@ -10,7 +10,20 @@ namespace GoldBadge_ConsoleApps
     {
         public void Run()
         {
-            Console.WriteLine("My Name is Chris");
+            displayChoices();
+
+
+        }
+
+        public void displayChoices()
+        {
+            Console.WriteLine("Welcome to Komodo Cafe\n" +
+                "================================================\n" +
+                "Menu Choices\n" +
+                "1. Add Menu Items\n" +
+                "2. Update Menu Items\n" +
+                "3. Delete Menu Items\n" +
+                "4. Display Menu Items\n\n\n");
         }
     }
 }
