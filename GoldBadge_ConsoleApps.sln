@@ -19,9 +19,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "05_KomodoEmailProblem", "05
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "06_KomodoGreenPlan", "06_KomodoGreenPlan", "{D9BE2ABA-FFB2-45D2-BB98-D6F4A2F4B64A}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "07_KomodoBarbecue", "07_KomodoBarbecue", "{B9F6DD7B-6E0B-42BF-AE5F-7449EB524430}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "06_KomodoBarbecue", "06_KomodoBarbecue", "{B9F6DD7B-6E0B-42BF-AE5F-7449EB524430}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "08_Bonus_KomodoSmartInsurance", "08_Bonus_KomodoSmartInsurance", "{E14CC607-AC36-45B5-9016-5859A5A7B6E4}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "07_Bonus_KomodoSmartInsurance", "07_Bonus_KomodoSmartInsurance", "{E14CC607-AC36-45B5-9016-5859A5A7B6E4}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02_KomodoClaimsDepartment", "..\KomodoClaimsDepartment\02_KomodoClaimsDepartment.csproj", "{E79F561F-A6BA-48E1-B0E6-3FB5F1D0616A}"
 EndProject
