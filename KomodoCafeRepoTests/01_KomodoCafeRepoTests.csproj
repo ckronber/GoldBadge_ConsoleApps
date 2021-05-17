@@ -56,7 +56,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\GoldBadge_ConsoleApps\01_KomodoCafeConsole.csproj">
+    <ProjectReference Include="..\01_KomodoCafe\01_KomodoCafeConsole.csproj">
       <Project>{22D9087B-A284-46B8-919A-3ED2CC79E751}</Project>
       <Name>01_KomodoCafeConsole</Name>
     </ProjectReference>
