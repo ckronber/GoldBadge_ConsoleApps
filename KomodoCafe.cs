@@ -10,13 +10,12 @@ namespace GoldBadge_ConsoleApps
     {
         public MenuItem() { }
         public MenuItem(string mealName, string mealDescription, List<string> mealIngredients, decimal price) {
-            MealNumber += 1;
             this.MealName = mealName;
             this.MealDescription = mealDescription;
             this.Ingredients = mealIngredients;
             this.price = price;
         }
-        public int MealNumber { get; private set; }
+        public int MealNumber { get; set; }
         public string MealName { get; set; }
         public string MealDescription { get; set; }
         public List<string> Ingredients { get; set; } = new List<string>() { };
