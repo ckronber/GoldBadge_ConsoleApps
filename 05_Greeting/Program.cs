@@ -1,4 +1,5 @@
-﻿using System;
+﻿using _05_Greeting;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,6 +11,8 @@ namespace _05_GreetingConsole
     {
         static void Main(string[] args)
         {
+            ProgramUI Emails = new ProgramUI();
+            Emails.Run();
         }
     }
 }
