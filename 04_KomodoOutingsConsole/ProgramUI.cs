@@ -195,7 +195,7 @@ namespace _04_KomodoOutingsConsole
             _outingList.AddEvent(new KomodoOutings(EventType.Golf, 350, new DateTime(2020, 5, 18), 23.32m, 20000.00m));
             _outingList.AddEvent(new KomodoOutings(EventType.Bowling, 1000, new DateTime(2020, 7, 25), 10.50m, 10500.00m));
             _outingList.AddEvent(new KomodoOutings(EventType.Amusement_Park, 1800, new DateTime(2020, 6, 30), 55.00m, 35000.00m));
-            _outingList.AddEvent(new KomodoOutings(EventType.Golf, 2000, new DateTime(2020, 8, 5), 22.50m, 44500.00m));
+            _outingList.AddEvent(new KomodoOutings(EventType.Concert, 2000, new DateTime(2020, 8, 5), 22.50m, 44500.00m));
         }
     }
 }
