@@ -24,6 +24,5 @@ namespace _04_KomodoOutingsConsole
         public DateTime EventDate { get; set; }
         public decimal CostPerPeron { get; set; }
         public decimal TotalCost { get; set; }
-
     }
 }

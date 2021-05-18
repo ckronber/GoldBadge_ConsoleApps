@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace _04_KomodoOutingsConsole
 {
-    class KomodoOutingsRepo
+    public class KomodoOutingsRepo
     {
-        List<KomodoOutings> _outingEvent = new List<KomodoOutings>() { };
+        private readonly List<KomodoOutings> _outingEvent = new List<KomodoOutings>() { };
 
         //Create
         public bool AddEvent(KomodoOutings Outing)
