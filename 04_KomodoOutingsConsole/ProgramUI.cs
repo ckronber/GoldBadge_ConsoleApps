@@ -87,9 +87,9 @@ namespace _04_KomodoOutingsConsole
             {
                 Console.WriteLine($"Outing Event: {Outing.TypeOfEvent}");
                 Console.WriteLine($"Number of Employees: {Outing.NumberOfEmployees}");
-                Console.WriteLine($"Event Date: {Outing.EventDate}");
+                Console.WriteLine($"Event Date: {Outing.EventDate.ToShortDateString()}");
                 Console.WriteLine($"Cost Per Person: {Outing.CostPerPeron}");
-                Console.WriteLine($"Cost Per Person: {Outing.TotalCost}");
+                Console.WriteLine($"Cost Per Person: {Outing.TotalCost}\n\n");
             }
         }
 
@@ -97,7 +97,7 @@ namespace _04_KomodoOutingsConsole
         {
             KomodoOutings Outing = new KomodoOutings();
 
-            DisplayTypeMenu(Outing);
+            Outing.TypeOfEvent = DisplayTypeMenu();
 
             Console.Write("Enter the number of People that Attended: ");
             Outing.NumberOfEmployees = Convert.ToInt32(Console.ReadLine());
@@ -115,7 +115,7 @@ namespace _04_KomodoOutingsConsole
             _outingList.AddEvent(Outing);
         }
 
-        private void DisplayTypeMenu(KomodoOutings myOuting)
+        private EventType DisplayTypeMenu()
         {
             Console.Clear();
             Console.WriteLine("\tSelect Outing Type\n" +
@@ -126,10 +126,10 @@ namespace _04_KomodoOutingsConsole
                 "3. Amusement Park\n" +
                 "4. Concert\n");
 
-            GetTypeResponse(myOuting);
+            return GetTypeResponse();
         }
 
-        private void GetTypeResponse(KomodoOutings Outing1)
+        private EventType GetTypeResponse()
         {
             Console.WriteLine("Enter a Number: ");
             try
@@ -137,17 +137,13 @@ namespace _04_KomodoOutingsConsole
                 switch (Convert.ToInt32(Console.ReadLine()))
                 {
                     case 1:
-                        Outing1.TypeOfEvent = EventType.Golf;
-                        break;
+                        return EventType.Golf;
                     case 2:
-                        Outing1.TypeOfEvent = EventType.Bowling;
-                        break;
+                        return EventType.Bowling;
                     case 3:
-                        Outing1.TypeOfEvent = EventType.Amusement_Park;
-                        break;
+                        return EventType.Amusement_Park;
                     case 4:
-                        Outing1.TypeOfEvent = EventType.Concert;
-                        break;
+                        return EventType.Concert;
                     default:
                         Console.WriteLine("Choose a number between 1 and 4");
                         break;
@@ -158,6 +154,7 @@ namespace _04_KomodoOutingsConsole
                 Console.WriteLine(e.Message);
                 Thread.Sleep(1000);
             }
+            return EventType.Concert;
         }
 
         private void DisplayCosts()
@@ -168,8 +165,8 @@ namespace _04_KomodoOutingsConsole
             Dictionary<string, decimal> costDict = new Dictionary<string, decimal>();
             costDict.Add("Golf", 0.00m);
             costDict.Add("Bowling", 0.00m);
-            costDict.Add("Amusement Park", 0.00m);
-            costDict.Add("Concert", 0.00m);
+            costDict.Add("Amusement_Park", 0.00m);
+            costDict.Add("Concerts", 0.00m);
 
             foreach (KomodoOutings Outing in costList)
             {
@@ -178,23 +175,27 @@ namespace _04_KomodoOutingsConsole
                 else if(Outing.TypeOfEvent == EventType.Bowling)
                     costDict["Bowling"] += Outing.TotalCost;
                 else if (Outing.TypeOfEvent == EventType.Amusement_Park)
-                    costDict["Amusement Park"] += Outing.TotalCost;
-                else
+                    costDict["Amusement_Park"] += Outing.TotalCost;
+                else if (Outing.TypeOfEvent == EventType.Concert)
                     costDict["Concerts"] += Outing.TotalCost;
             }
 
-            allOutings = costDict["Golf"] + costDict["Bowling"] + costDict["Amusement Park"] + costDict["Concerts"];
+            allOutings = costDict["Golf"] + costDict["Bowling"] + costDict["Amusement_Park"] + costDict["Concerts"];
 
             Console.WriteLine($"Total Cost for All Outings: ${allOutings}");
             Console.WriteLine($"Total Cost for Golf: ${costDict["Golf"]}");
             Console.WriteLine($"Total Cost for Bowling: ${costDict["Bowling"]}");
-            Console.WriteLine($"Total Cost for Amusement Parks: ${costDict["Amusement Park"]}");
+            Console.WriteLine($"Total Cost for Amusement Parks: ${costDict["Amusement_Park"]}");
             Console.WriteLine($"Total Cost for Concerts: ${costDict["Concerts"]}");
         }
 
         private void SeedValues()
         {
             //Add values here
+            _outingList.AddEvent(new KomodoOutings(EventType.Golf, 350, new DateTime(2020, 5, 18), 23.32m, 20000.00m));
+            _outingList.AddEvent(new KomodoOutings(EventType.Bowling, 1000, new DateTime(2020, 7, 25), 10.50m, 10500.00m));
+            _outingList.AddEvent(new KomodoOutings(EventType.Amusement_Park, 1800, new DateTime(2020, 6, 30), 55.00m, 35000.00m));
+            _outingList.AddEvent(new KomodoOutings(EventType.Golf, 2000, new DateTime(2020, 8, 5), 22.50m, 44500.00m));
         }
     }
 }
