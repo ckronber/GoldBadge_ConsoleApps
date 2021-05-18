@@ -10,6 +10,8 @@ namespace _04_KomodoOutingsConsole
     {
         static void Main(string[] args)
         {
+            ProgramUI CompanyOuting = new ProgramUI();
+            CompanyOuting.Run();
         }
     }
 }

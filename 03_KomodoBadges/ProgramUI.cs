@@ -17,7 +17,6 @@ namespace _03_KomodoBadges
 
             while (_keepRunning)
             {
-                Console.WriteLine("Program is Running");
                 DisplayMenu();
             }
         }

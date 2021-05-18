@@ -9,6 +9,7 @@ namespace _04_KomodoOutingsTests
         [TestMethod]
         public void TestMethod1()
         {
+
         }
     }
 }
