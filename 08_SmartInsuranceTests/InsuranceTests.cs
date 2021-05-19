@@ -1,15 +1,14 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 
-namespace _06_KomodoGreenPlanTests
+namespace _08_SmartInsuranceTests
 {
     [TestClass]
-    public class GreenPlanTesting
+    public class InsuranceTests
     {
         [TestMethod]
         public void TestMethod1()
         {
-            Assert.IsTrue(true);
         }
     }
 }
