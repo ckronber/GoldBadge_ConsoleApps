@@ -56,7 +56,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\KomodoClaimsDepartment\02_KomodoClaimsDepartment.csproj">
+    <ProjectReference Include="..\02_KomodoClaimsDepartment\02_KomodoClaimsDepartment.csproj">
       <Project>{E79F561F-A6BA-48E1-B0E6-3FB5F1D0616A}</Project>
       <Name>02_KomodoClaimsDepartment</Name>
     </ProjectReference>

@@ -1,10 +1,10 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 
-namespace KomodoGreenPlanTests
+namespace _06_KomodoGreenPlanTests
 {
     [TestClass]
-    public class GreenPlanTests
+    public class GreenPlanTesting
     {
         [TestMethod]
         public void TestMethod1()
