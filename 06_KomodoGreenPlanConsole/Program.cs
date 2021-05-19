@@ -10,6 +10,8 @@ namespace _06_KomodoGreenPlanConsole
     {
         static void Main(string[] args)
         {
+            ProgramUI myUI = new ProgramUI();
+            myUI.Run();
         }
     }
 }
