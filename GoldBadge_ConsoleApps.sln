@@ -27,13 +27,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "06_KomodoGreenPlanTests", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01_KomodoCafeRepoTests", "01_KomodoCafeRepoTests\01_KomodoCafeRepoTests.csproj", "{D73D8232-78F8-49E8-A26A-62A1804770BC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02_KomodoClaimsDepartmentTest", "02_KomodoClaimsDepartmentTest\02_KomodoClaimsDepartmentTest.csproj", "{437E226A-C19A-4EAF-BFEC-ABFDE889AF90}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03_KomodoBadgesTest", "03_KomodoBadgesTest\03_KomodoBadgesTest.csproj", "{AF5EB896-159C-453C-80AB-4A9F6F9288AA}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "05_GreetingTests", "05_GreetingTests\05_GreetingTests.csproj", "{025384E6-2082-449A-99E6-C8CFA070F108}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "07_KomodoBarbecueTests", "07_KomodoBarbecueTests\07_KomodoBarbecueTests.csproj", "{573D585A-5853-45D4-82CB-167EADF067DC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02_KomodoClaimsDepartmentTest", "02_KomodoClaimsDepartmentTest\02_KomodoClaimsDepartmentTest.csproj", "{8ED02B0F-DCCE-4BA8-8500-4325583D1A76}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -89,10 +89,6 @@ Global
 		{D73D8232-78F8-49E8-A26A-62A1804770BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D73D8232-78F8-49E8-A26A-62A1804770BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D73D8232-78F8-49E8-A26A-62A1804770BC}.Release|Any CPU.Build.0 = Release|Any CPU
-		{437E226A-C19A-4EAF-BFEC-ABFDE889AF90}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{437E226A-C19A-4EAF-BFEC-ABFDE889AF90}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{437E226A-C19A-4EAF-BFEC-ABFDE889AF90}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{437E226A-C19A-4EAF-BFEC-ABFDE889AF90}.Release|Any CPU.Build.0 = Release|Any CPU
 		{AF5EB896-159C-453C-80AB-4A9F6F9288AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{AF5EB896-159C-453C-80AB-4A9F6F9288AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AF5EB896-159C-453C-80AB-4A9F6F9288AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -105,6 +101,10 @@ Global
 		{573D585A-5853-45D4-82CB-167EADF067DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{573D585A-5853-45D4-82CB-167EADF067DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{573D585A-5853-45D4-82CB-167EADF067DC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8ED02B0F-DCCE-4BA8-8500-4325583D1A76}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8ED02B0F-DCCE-4BA8-8500-4325583D1A76}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8ED02B0F-DCCE-4BA8-8500-4325583D1A76}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8ED02B0F-DCCE-4BA8-8500-4325583D1A76}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

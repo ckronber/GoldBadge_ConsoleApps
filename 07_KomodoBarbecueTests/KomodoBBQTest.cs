@@ -9,6 +9,7 @@ namespace _07_KomodoBarbecueTests
         [TestMethod]
         public void TestMethod1()
         {
+            Assert.IsTrue(true);
         }
     }
 }

@@ -1,6 +1,5 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
-using KomodoClaimsDepartment;
+﻿using KomodoClaimsDepartment;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Collections.Generic;
 
 namespace _02_KomodoClaimsDepartmentTest
@@ -20,6 +19,7 @@ namespace _02_KomodoClaimsDepartmentTest
             //Assert
             Assert.IsTrue(value);
         }
+
         [TestMethod]
         public void displayAll_ShouldReturnCollection()
         {
@@ -33,6 +33,7 @@ namespace _02_KomodoClaimsDepartmentTest
             //Assert
             Assert.IsTrue(collectionHasClaim);
         }
+
         [TestMethod]
         public void deleteFromQueue_shouldreturnBool()
         {
@@ -48,6 +49,7 @@ namespace _02_KomodoClaimsDepartmentTest
             //Assert
             Assert.IsTrue(wasDeleted);
         }
+
         [TestMethod]
         public void getNext_shouldreturnClaim()
         {
