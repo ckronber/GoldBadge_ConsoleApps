@@ -19,6 +19,7 @@ namespace KomodoBadgesTest
 
             Assert.IsTrue(isAdded);
         }
+
         [TestMethod]
         public void ReadBadge_ShouldReturnDictionary()
         {
@@ -44,6 +45,7 @@ namespace KomodoBadgesTest
 
             Assert.IsTrue(wasUpdated);
         }
+
         [TestMethod]
         public void UpdateAddDoor_ShouldReturnBool()
         {

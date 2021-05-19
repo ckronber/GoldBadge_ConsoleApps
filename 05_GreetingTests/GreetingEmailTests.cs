@@ -9,6 +9,7 @@ namespace _05_GreetingTests
         [TestMethod]
         public void TestMethod1()
         {
+            Assert.IsTrue(true);
         }
     }
 }

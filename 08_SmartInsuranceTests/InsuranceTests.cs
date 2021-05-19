@@ -9,6 +9,7 @@ namespace _08_SmartInsuranceTests
         [TestMethod]
         public void TestMethod1()
         {
+            Assert.IsTrue(true);
         }
     }
 }
