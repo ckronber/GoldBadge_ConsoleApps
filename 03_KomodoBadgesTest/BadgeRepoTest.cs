@@ -24,19 +24,19 @@ namespace KomodoBadgesTest
         {
             Badge myBadge = new Badge();
             BadgeRepository badgeRepo = new BadgeRepository();
-           
+
             badgeRepo.AddBadge(myBadge);
 
             Dictionary<int, List<string>> newBadgeRepo = badgeRepo.DisplayBadges();
 
-            Assert.IsTrue(newBadgeRepo.ContainsKey(myBadge.BadgeID));     
+            Assert.IsTrue(newBadgeRepo.ContainsKey(myBadge.BadgeID));
         }
 
         [TestMethod]
         public void UpdateRemoveDoor_ShouldReturnBool()
         {
             bool wasUpdated;
-            Badge myBadge = new Badge(12334,new List<string>{"C3","D5"});
+            Badge myBadge = new Badge(12334, new List<string> { "C3", "D5" });
             BadgeRepository badgeRepo = new BadgeRepository();
             badgeRepo.AddBadge(myBadge);
 

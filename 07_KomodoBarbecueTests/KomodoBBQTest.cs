@@ -4,7 +4,7 @@ using System;
 namespace _07_KomodoBarbecueTests
 {
     [TestClass]
-    public class UnitTest1
+    public class KomodoBBQTest
     {
         [TestMethod]
         public void TestMethod1()

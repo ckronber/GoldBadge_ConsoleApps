@@ -36,14 +36,14 @@ namespace KomodoCafeRepoTests
         }
 
         private MenuItem cafeItem;
-        private  MenuRepository cafeRepository;
+        private MenuRepository cafeRepository;
 
         [TestInitialize]
         public void Arrange()
         {
-           cafeRepository = new MenuRepository();
-           cafeItem = new MenuItem("Bobs Burger", "burger with fries", new List<string>() { "Wheat", "other stuff" }, 11.23m);
-           cafeRepository.CreateMenuItems(cafeItem);
+            cafeRepository = new MenuRepository();
+            cafeItem = new MenuItem("Bobs Burger", "burger with fries", new List<string>() { "Wheat", "other stuff" }, 11.23m);
+            cafeRepository.CreateMenuItems(cafeItem);
         }
 
         [TestMethod]
@@ -51,7 +51,7 @@ namespace KomodoCafeRepoTests
         {
             //Arrange
             //Already done in the Arrange() method
-            cafeRepository.UpdateMenuItems(1,new MenuItem( "Burger with Cheese", "Burger with fries", new List<string>() { "item1", "item2" }, 12.45m));
+            cafeRepository.UpdateMenuItems(1, new MenuItem("Burger with Cheese", "Burger with fries", new List<string>() { "item1", "item2" }, 12.45m));
             //Assert
             Assert.AreEqual(cafeItem.MealName, "Burger with Cheese");
         }
