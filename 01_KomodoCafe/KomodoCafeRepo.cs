@@ -57,7 +57,7 @@ namespace GoldBadge_ConsoleApps
             if (_CafeRepo.Count < repoCount)
                 return true; // item was deleted
             else
-                return false; // item was not delted
+                return false; // item was not deleted
         }
     }
 }

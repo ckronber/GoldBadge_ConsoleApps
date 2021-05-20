@@ -131,20 +131,26 @@ namespace KomodoClaimsDepartment
 
             Console.Write("Enter the Claim ID: ");
             myClaim.ClaimID = Convert.ToInt32(Console.ReadLine());
+
             Console.Write("Enter the claim type (car, home, or theft): ");
             myClaim.TypeOfClaim = DisplayClaimtypeMenu();
+
             Console.WriteLine($"Claim ID: {myClaim.ClaimID}");
             Console.WriteLine($"Claim Type: {myClaim.TypeOfClaim}");
             Console.Write("Enter a Claim Description: ");
             myClaim.Description = Console.ReadLine();
+
             Console.Write("Amount of Damage: $");
             myClaim.ClaimAmount = Convert.ToDecimal(Console.ReadLine());
+
             Console.Write("Date of Accident in Month/Day/Year format: ");
             string[] calEntry = Console.ReadLine().Split('/');
             myClaim.DateOfIncident = new DateTime(Convert.ToInt32(calEntry[2]), Convert.ToInt32(calEntry[0]), Convert.ToInt32(calEntry[1]));
+
             Console.Write("Date of Claim in Month/Day/Year format: ");
             string[] cal2Entry = Console.ReadLine().Split('/');
             myClaim.DateOfClaim= new DateTime(Convert.ToInt32(cal2Entry[2]), Convert.ToInt32(cal2Entry[0]), Convert.ToInt32(cal2Entry[1]));
+
             if(myClaim.IsValid)
                 Console.WriteLine("The claim is valid.");
             else
