@@ -10,7 +10,8 @@ Console Apps Added
 
 ## Installation
 
-1. Click the Green Code Button in this repository ![Code Button](screenshot.png)
+1. Click the Green Code Button in this repository 
+    - ![Code Button](CodeButton.jpg)
 2. Choose from the following options:
    - Copy the Link and Use it to clone in Visual Studio 
    - Click the Open in Visual Studio Button
@@ -25,17 +26,40 @@ foobar.pluralize('word') # returns 'words'
 foobar.pluralize('goose') # returns 'geese'
 foobar.singularize('phenomena') # returns 'phenomenon'
 ```
-#Komodo Claims Department
-1. Claim
+## Komodo Claims Department
+```csharp
+import foobar
 
-#Komodo Insurance Badges
-1. Claim
+foobar.pluralize('word') # returns 'words'
+foobar.pluralize('goose') # returns 'geese'
+foobar.singularize('phenomena') # returns 'phenomenon'
+```
 
-#Komodo Company Outings
-1. Claim
+## Komodo Insurance Badges
+```csharp
+import foobar
 
-#Komodo Insurance Email Problem
-1. Claim
+foobar.pluralize('word') # returns 'words'
+foobar.pluralize('goose') # returns 'geese'
+foobar.singularize('phenomena') # returns 'phenomenon'
+```
+
+## Komodo Company Outings
+```csharp
+import foobar
+
+foobar.pluralize('word') # returns 'words'
+foobar.pluralize('goose') # returns 'geese'
+foobar.singularize('phenomena') # returns 'phenomenon'
+```
+## Komodo Insurance Email Problem
+```csharp
+import foobar
+
+foobar.pluralize('word') # returns 'words'
+foobar.pluralize('goose') # returns 'geese'
+foobar.singularize('phenomena') # returns 'phenomenon'
+```
 
 ## Contributing
 Pull requests are welcome.
