@@ -19,26 +19,26 @@ Console Apps Added
 
 
 ## KomodoCafe
-There is a menu where you can:
-1. Create a menu item
-2. Edit a Menu item
-3. Remove a Menu item
-4. Show Everything on the menu.
+This was a challenge to make a Console app to be able to create, read, upodate and delete menu items.
 
-Them Menu Items Include:
+Them Menu Class Includes:
 - Meal Number
 - Meal Name
 - Description
 - List of Ingredients
 - Price
 
+Main Menu in Console
 - ![Display In Console](MainMenu.jpg)
+
+All Menu Items Displayed in Console
 - ![Display In Console](DisplayMenu.jpg)
 
 ```csharp
 
 ```
 ## Komodo Claims Department
+
 ```csharp
 
 ```
