@@ -28,7 +28,7 @@ Them Menu Class Includes:
 - List of Ingredients
 - Price
 
-Main Menu in Console
+Main Menu for Cafe in Console
 - ![Display In Console](MainMenu.jpg)
 
 All Menu Items Displayed in Console
@@ -39,11 +39,29 @@ All Menu Items Displayed in Console
 ```
 ## Komodo Claims Department
 
+The Komodo Claims Challenge was to create an Insurance Console app to Create, Read, show the item to be removed from the queue.
+It also removes or dequeues the items when the user enters 'y'. if they enter 'n' it will not be removed and go back to the menu.
+
+Main Menu for Claims in Console
+- ![Display In Console](ClaimsMainMenu.jpg)
+
+Claims Displayed in Console
+- ![Display In Console](DisplayClaims.jpg)
+
 ```csharp
 
 ```
 
 ## Komodo Insurance Badges
+The Komodo Insurance Badges is a Console app that connects badges to doors. The user can add doors to a badge nuber, Update the badge to add or remove a door from the badge. 
+The user can also Show all of the badges with the doors in which they have access.
+
+Main Menu for Badges in Console
+- ![Display In Console](BadgesMenu.jpg)
+
+Badges Displayed in Console
+- ![Display In Console](DisplayBadges.jpg)
+
 ```csharp
 
 ```
