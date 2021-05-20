@@ -8,27 +8,27 @@ namespace _02_KomodoClaimsDepartmentTest
     public class KomodoClaimsDeptTest
     {
         [TestMethod]
-        public void addToQueue_ShouldReturnBool()
+        public void AddToQueue_ShouldReturnBool()
         {
             //Arrange
             bool value;
             Claim newClaim = new Claim();
             ClaimRepository claimRepo = new ClaimRepository();
             //Act
-            value = claimRepo.addToQueue(newClaim);
+            value = claimRepo.AddToQueue(newClaim);
             //Assert
             Assert.IsTrue(value);
         }
 
         [TestMethod]
-        public void displayAll_ShouldReturnCollection()
+        public void DisplayAll_ShouldReturnCollection()
         {
             //Assert
             Claim newClaim = new Claim();
             ClaimRepository claimRepo = new ClaimRepository();
-            claimRepo.addToQueue(newClaim);
+            claimRepo.AddToQueue(newClaim);
             //Arrange
-            List<Claim> myQueue = claimRepo.readQueue();
+            List<Claim> myQueue = claimRepo.ReadQueue();
             bool collectionHasClaim = myQueue.Contains(newClaim);
             //Assert
             Assert.IsTrue(collectionHasClaim);
@@ -40,7 +40,7 @@ namespace _02_KomodoClaimsDepartmentTest
             //Assert
             Claim newClaim = new Claim();
             ClaimRepository claimRepo = new ClaimRepository();
-            claimRepo.addToQueue(newClaim);
+            claimRepo.AddToQueue(newClaim);
             bool wasDeleted;
 
             //Arrange
@@ -56,11 +56,11 @@ namespace _02_KomodoClaimsDepartmentTest
             //Assert
             Claim newClaim = new Claim();
             ClaimRepository claimRepo = new ClaimRepository();
-            claimRepo.addToQueue(newClaim);
+            claimRepo.AddToQueue(newClaim);
 
             //Arrange
             List<Claim> myList = new List<Claim>();
-            myList.Add(claimRepo.getNext());
+            myList.Add(claimRepo.GetNext());
             bool hasClaim = myList.Contains(newClaim);
 
             //Assert

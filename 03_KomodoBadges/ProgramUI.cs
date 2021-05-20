@@ -37,7 +37,7 @@ namespace _03_KomodoBadges
 
         private void GetResponse()
         {
-            Console.WriteLine("Enter a Number: ");
+            Console.Write("Enter a Number: ");
             try
             {
                 switch (Convert.ToInt32(Console.ReadLine()))
@@ -75,7 +75,7 @@ namespace _03_KomodoBadges
 
         private void ClearAfterKeypress()
         {
-            Console.WriteLine("Press a key to continue");
+            Console.WriteLine("\n\nPress a key to continue");
             Console.ReadKey();
             Console.Clear();
         }
@@ -111,7 +111,7 @@ namespace _03_KomodoBadges
             bool AddRemove = true;
             bool isUpdated = false;
 
-            Console.WriteLine("Enter a Number: ");
+            Console.Write("Enter a Number: ");
             try
             {
                 switch (Convert.ToInt32(Console.ReadLine()))
@@ -119,7 +119,7 @@ namespace _03_KomodoBadges
                     case 1:
                         //Remove a door
                         AddRemove = false;
-                        Console.WriteLine("Which door would you like to Remove: ");
+                        Console.Write("Which door would you like to Remove: ");
                         Door = Console.ReadLine();
                         isUpdated = _badgeRepository.UpdateBadgebyKey(Badge, Door, AddRemove);
                         if(isUpdated)
@@ -130,7 +130,7 @@ namespace _03_KomodoBadges
                     case 2:
                         //Add a door
                         AddRemove = true;
-                        Console.WriteLine("Which door would you like to Add: ");
+                        Console.Write("Which door would you like to Add: ");
                         Door = Console.ReadLine();
                         isUpdated = _badgeRepository.UpdateBadgebyKey(Badge, Door, AddRemove);
                         if(isUpdated)
@@ -152,10 +152,12 @@ namespace _03_KomodoBadges
 
         private void EditBadge()
         {
+            ListBadges();
+            Console.WriteLine();
             Dictionary<int,List<string>> myDict = _badgeRepository.DisplayBadges(); // Needed for displaying Badges for door
             int BadgeNum;
             string DoorAccess = "";
-            Console.Write("What is the number on the badge: ");
+            Console.Write("What is the number on the badge of doors to change: ");
             BadgeNum = Convert.ToInt32(Console.ReadLine());
 
             //loop for displaying all doors
@@ -191,7 +193,6 @@ namespace _03_KomodoBadges
             //list all badges view
             Dictionary<int,List<string>> myDict =_badgeRepository.DisplayBadges();
             
-
             Console.WriteLine("{0,-10}{1,-10}", "Badge #", "Door Access");
             for(int i=0;i < myDict.Count;i++)
             {

@@ -11,14 +11,14 @@ namespace KomodoClaimsDepartment
         private readonly Queue<Claim> _claimsInQueue = new Queue<Claim>();
        
         //Create
-        public bool addToQueue(Claim newClaim)
+        public bool AddToQueue(Claim newClaim)
         {
             int count = _claimsInQueue.Count;
             _claimsInQueue.Enqueue(newClaim);
             return _claimsInQueue.Count>count? true:false;
         }
         //Read
-        public List<Claim> readQueue()
+        public List<Claim> ReadQueue()
         {
             return _claimsInQueue.ToList();
         }
@@ -36,7 +36,7 @@ namespace KomodoClaimsDepartment
                 return false;
         }
 
-        public Claim getNext()
+        public Claim GetNext()
         {
             return _claimsInQueue.Peek();
         }

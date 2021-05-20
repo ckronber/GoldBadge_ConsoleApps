@@ -98,6 +98,7 @@ namespace _05_Greeting
             }
             Console.WriteLine();
         }
+
         public void AddEmailCustomer()
         {
             KomodoEmail email = new KomodoEmail();

@@ -12,7 +12,6 @@ namespace KomodoClaimsDepartment
         public bool _keepRunning = true;
         public ClaimRepository _claimRepo = new ClaimRepository();
         public int _count = 0;
-        //public Claim _myClaim = new Claim();
        
         public void Run()
         {
@@ -27,7 +26,7 @@ namespace KomodoClaimsDepartment
         {
             Console.Clear();
             Console.WriteLine("\tKomodo Claims Department\n" +
-                "================================================\n" +
+                "=======================================\n\n" +
                 "Choose a menu item:\n" +
                 "1. See all claims\n" +
                 "2. Take care of next claim\n" +
@@ -37,9 +36,9 @@ namespace KomodoClaimsDepartment
             GetResponse();
         }
 
-        private  void GetResponse()
+        private void GetResponse()
         {
-            Console.WriteLine("Enter a Number: ");
+            Console.Write("Enter a Number: ");
             try
             {
                 switch (Convert.ToInt32(Console.ReadLine()))
@@ -63,7 +62,7 @@ namespace KomodoClaimsDepartment
                         _keepRunning = false;
                         break;
                     default:
-                        Console.WriteLine("Choose a number between 1 and 4");
+                        Console.Write("Choose a number between 1 and 4");
                         break;
                 }
             }
@@ -72,12 +71,11 @@ namespace KomodoClaimsDepartment
                 Console.WriteLine(e.Message);
                 Thread.Sleep(1000);
             }
-
         }
 
         private void ClearAfterKeypress()
         {
-            Console.WriteLine("Press a key to continue");
+            Console.Write("\n\nPress a key to continue");
             Console.ReadKey();
             Console.Clear();
         }
@@ -85,18 +83,18 @@ namespace KomodoClaimsDepartment
         
         private void SeeClaims()
         {
-            List<Claim> claimArray = _claimRepo.readQueue();
+            List<Claim> claimArray = _claimRepo.ReadQueue();
 
             Console.WriteLine("{0,-10}{1,-10}{2,-25}{3,-10}{4,-18}{5,-18}{6,-10}","ClaimID","Type","Description","Amount","DateOfAccident","DateOfClaim","IsValid");
             foreach (Claim myClaim in claimArray)
             {
-                Console.WriteLine("{0,-10}{1,-10}{2,-25}{3,-10}{4,-18}{5,-18}{6,-10}", myClaim.ClaimID,myClaim.TypeOfClaim,myClaim.Description,myClaim.ClaimAmount,myClaim.DateOfClaim.ToShortDateString(),myClaim.DateOfIncident.ToShortDateString(),myClaim.IsValid);
+                Console.WriteLine("{0,-10}{1,-10}{2,-25}{3,-10}{4,-18}{5,-18}{6,-10}", myClaim.ClaimID,myClaim.TypeOfClaim,myClaim.Description,$"${myClaim.ClaimAmount}",myClaim.DateOfIncident.ToShortDateString(),myClaim.DateOfClaim.ToShortDateString(),myClaim.IsValid);
             }
         }
 
         private void TakeCareofClaims()
         {
-            Claim myClaim = _claimRepo.getNext();
+            Claim myClaim = _claimRepo.GetNext();
             if (myClaim != null)
             {
                 Console.WriteLine($"ClaimID: {myClaim.ClaimID}\n" +
@@ -123,9 +121,11 @@ namespace KomodoClaimsDepartment
 
             Console.Write("Enter the Claim ID: ");
             myClaim.ClaimID = Convert.ToInt32(Console.ReadLine());
-            Console.Write("Enter the claim type (car,): ");
-            myClaim.TypeOfClaim = getClaimType(Console.ReadLine());
-            Console.Write("Enter a Clalim Description: ");
+            Console.Write("Enter the claim type (car, home, or theft): ");
+            myClaim.TypeOfClaim = DisplayClaimtypeMenu();
+            Console.WriteLine($"Claim ID: {myClaim.ClaimID}");
+            Console.WriteLine($"Claim Type: {myClaim.TypeOfClaim}");
+            Console.Write("Enter a Claim Description: ");
             myClaim.Description = Console.ReadLine();
             Console.Write("Amount of Damage: $");
             myClaim.ClaimAmount = Convert.ToDecimal(Console.ReadLine());
@@ -135,32 +135,73 @@ namespace KomodoClaimsDepartment
             Console.Write("Date of Claim in Month/Day/Year format: ");
             string[] cal2Entry = Console.ReadLine().Split('/');
             myClaim.DateOfClaim= new DateTime(Convert.ToInt32(cal2Entry[2]), Convert.ToInt32(cal2Entry[0]), Convert.ToInt32(cal2Entry[1]));
-            Console.WriteLine($"The claim is {myClaim.IsValid}");
+            if(myClaim.IsValid)
+                Console.WriteLine("The claim is valid.");
+            else
+                Console.WriteLine("The claim is NOT valid.");
 
-            _claimRepo.addToQueue(myClaim);
+            _claimRepo.AddToQueue(myClaim);
+        }
+
+        private ClaimType DisplayClaimtypeMenu()
+        {
+            int responseValue;
+
+            do
+            {
+                Console.Clear();
+            Console.WriteLine("\tInsurance Claim Type\n" +
+                "=======================================\n\n" +
+                "Choose a Type:\n" +
+                "1. Car\n" +
+                "2. Home\n" +
+                "3. Theft\n");
+
+            
+
+                responseValue = GetClaimResponse();
+            } while (responseValue <= 0 || responseValue > 3);
+            Console.Clear();
+
+            return (ClaimType)responseValue;
+        }
+
+        private int GetClaimResponse()
+        {
+            Console.Write("Enter a Number: ");
+            try
+            {
+                switch (Convert.ToInt32(Console.ReadLine()))
+                {
+                    case 1:
+                        Console.Clear();
+                        return 1;
+                    case 2:
+                        Console.Clear();
+                        return 2;
+                    case 3:
+                        Console.Clear();
+                        return 3;
+                    default:
+                        Console.Write("Choose a number between 1 and 3");
+                        Thread.Sleep(1000);
+                        Console.Clear();
+                        return -1;
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                Thread.Sleep(1000);
+            }
+            return 0;
         }
 
         private void SeedClaims()
         {
-            _claimRepo.addToQueue(new Claim(1,ClaimType.Car,"Car Accident on I65",432.25m,new DateTime(2020,5,23),new DateTime(2020,5,31)));
-            _claimRepo.addToQueue(new Claim(2,ClaimType.Home, "Hail Damage to Roof", 432.25m, new DateTime(2020, 4, 23), new DateTime(2020, 5, 31)));
-            _claimRepo.addToQueue(new Claim(3,ClaimType.Theft, "Ipod stolen", 432.25m, new DateTime(2020, 4, 23), new DateTime(2020, 5, 31)));
-        }
-
-        private ClaimType getClaimType(string input)
-        {
-            switch(input.ToLower())
-            {
-                case "car":
-                    return ClaimType.Car;
-                case "home":
-                    return ClaimType.Home;
-                case "theft":
-                    return ClaimType.Theft;
-                default:
-                    Console.WriteLine("Not a correct ClaimType, Car is being used here");
-                    return ClaimType.Car;
-            }
+            _claimRepo.AddToQueue(new Claim(1,ClaimType.Car,"Car Accident on I65",432.25m,new DateTime(2020,5,23),new DateTime(2020,5,31)));
+            _claimRepo.AddToQueue(new Claim(2,ClaimType.Home, "Hail Damage to Roof", 432.25m,new DateTime(2020, 4, 23), new DateTime(2020, 5, 31)));
+            _claimRepo.AddToQueue(new Claim(3,ClaimType.Theft, "Ipod stolen", 432.25m,new DateTime(2020, 4, 23), new DateTime(2020, 5, 15)));
         }
     }
 }

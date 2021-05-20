@@ -23,7 +23,7 @@ namespace KomodoBadgesTest
         [TestMethod]
         public void ReadBadge_ShouldReturnDictionary()
         {
-            Badge myBadge = new Badge();
+            Badge myBadge = new Badge(39482,new List<string> { "A1","B4"});
             BadgeRepository badgeRepo = new BadgeRepository();
 
             badgeRepo.AddBadge(myBadge);

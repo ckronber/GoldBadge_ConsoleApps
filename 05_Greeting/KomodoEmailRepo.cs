@@ -23,7 +23,7 @@ namespace _05_Greeting
         //Read
         public List<KomodoEmail> Read()
         {
-            return _emailList;  
+            return _emailList;
         }
 
         //Update

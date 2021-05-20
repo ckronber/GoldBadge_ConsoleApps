@@ -8,7 +8,6 @@ namespace _04_KomodoOutingsTest
     [TestClass]
     public class KomodoOutingTest
     {
-
         private KomodoOutingsRepo _newRepo;
         private KomodoOutings _newOuting;
 
@@ -51,10 +50,10 @@ namespace _04_KomodoOutingsTest
             KomodoOutings myOuting = new KomodoOutings();
             _newRepo.AddEvent(myOuting);
 
-            bool wasDelted;
-            wasDelted = _newRepo.DeleteEvent(myOuting);
+            bool wasDeleted;
+            wasDeleted = _newRepo.DeleteEvent(myOuting);
 
-            Assert.IsTrue(wasDelted);
+            Assert.IsTrue(wasDeleted);
         }
     }
 }

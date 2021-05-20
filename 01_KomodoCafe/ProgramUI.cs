@@ -26,8 +26,8 @@ namespace GoldBadge_ConsoleApps
         public void DisplayCafeMenu()
         {
             Console.Clear();
-            Console.WriteLine("\tWelcome to Komodo Cafe\n" +
-                "================================================\n" +
+            Console.WriteLine("   Welcome to Komodo Cafe\n" +
+                "=================================\n\n" +
                 "Menu Choices\n" +
                 "1. Add Menu Items\n" +
                 "2. Update Menu Items\n" +
@@ -38,7 +38,7 @@ namespace GoldBadge_ConsoleApps
 
         public void GetResponse()
         {
-            Console.WriteLine("Enter a Number: ");
+            Console.Write("Enter a Number: ");
             try {
                 switch (Convert.ToInt32(Console.ReadLine()))
                 {
