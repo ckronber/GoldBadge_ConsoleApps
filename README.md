@@ -19,6 +19,21 @@ Console Apps Added
 
 
 ## KomodoCafe
+There is a menu where you can:
+1. Create a menu item
+2. Edit a Menu item
+3. Remove a Menu item
+4. Show Everything on the menu.
+
+Them Menu Items Include:
+- Meal Number
+- Meal Name
+- Description
+- List of Ingredients
+- Price
+
+- ![Display In Console](..\Challenge1\DisplayMenu.jpg)
+
 ```csharp
 
 ```
