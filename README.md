@@ -1,7 +1,8 @@
 # Gold Badge Console Apps
 
-Console App #'s
-1. Cafe
+Console Apps Added
+1. Komodo Cafe
+2. Komodo 
 
 
 ## Installation
@@ -28,4 +29,4 @@ Pull requests are welcome. For major changes, please open an issue first to disc
 Please make sure to update tests as appropriate.
 
 ## License
-[MIT](https://choosealicense.com/licenses/mit/)
+None
