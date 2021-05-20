@@ -84,7 +84,9 @@ namespace _03_KomodoBadges
         {
             Badge myBadge = new Badge();
 
-            Console.Write("Enter the Number on the Badge: ");
+            ListBadges();
+
+            Console.Write("\n\nEnter the Number on the Badge to Add: ");
             myBadge.BadgeID = Convert.ToInt32(Console.ReadLine());
 
             Console.Write("List the doors you need access to seperated by commas:");
@@ -97,21 +99,22 @@ namespace _03_KomodoBadges
 
         private void DisplayEditMenu()
         {
-            Console.Clear();
-            Console.WriteLine("\tWhat would you like to do?\n" +
+            Console.WriteLine("\n\n\tWhat would you like to do?\n" +
                 "================================================\n" +
-                "Choose a menu item:\n" +
                 "1. Remove a Door\n" +
                 "2. Add a Door\n");
         }
 
         private void GetEditResponse(int Badge)
         {
+            List<string> DoorAccess;
+            int PreviousAccess = _badgeRepository.DisplayBadges()[Badge].Count;
+
             string Door;
             bool AddRemove = true;
-            bool isUpdated = false;
 
-            Console.Write("Enter a Number: ");
+            Console.Write("\nEnter a Number: ");
+
             try
             {
                 switch (Convert.ToInt32(Console.ReadLine()))
@@ -119,27 +122,34 @@ namespace _03_KomodoBadges
                     case 1:
                         //Remove a door
                         AddRemove = false;
+
                         Console.Write("Which door would you like to Remove: ");
+
                         Door = Console.ReadLine();
-                        isUpdated = _badgeRepository.UpdateBadgebyKey(Badge, Door, AddRemove);
-                        if(isUpdated)
-                            Console.WriteLine("Door Removed");
+                        DoorAccess = _badgeRepository.UpdateBadgebyKey(Badge, Door, AddRemove);
+
+                        if (DoorAccess.Count < PreviousAccess)
+                            Console.WriteLine($"Door {Door} Removed from {Badge}\n");
                         else
-                            Console.WriteLine("Door Not Removed");
+                            Console.WriteLine($"Door {Door} Not Removed from {Badge}\n");
+                       
                         break;
                     case 2:
                         //Add a door
                         AddRemove = true;
+
                         Console.Write("Which door would you like to Add: ");
                         Door = Console.ReadLine();
-                        isUpdated = _badgeRepository.UpdateBadgebyKey(Badge, Door, AddRemove);
-                        if(isUpdated)
-                            Console.WriteLine("Door Added");
+                        DoorAccess = _badgeRepository.UpdateBadgebyKey(Badge, Door, AddRemove);
+
+                        if (DoorAccess.Count > PreviousAccess)
+                            Console.WriteLine($"Door {Door} Added to {Badge}\n");
                         else
-                            Console.WriteLine("Door Not Added");
+                            Console.WriteLine($"Door {Door} Not Added to {Badge}\n");
+
                         break;
                     default:
-                        Console.WriteLine("Choose Either 1 or 2");
+                        Console.WriteLine("Choose 1 or 2");
                         break;
                 }
             }
@@ -153,48 +163,52 @@ namespace _03_KomodoBadges
         private void EditBadge()
         {
             ListBadges();
+
             Console.WriteLine();
-            Dictionary<int,List<string>> myDict = _badgeRepository.DisplayBadges(); // Needed for displaying Badges for door
+            Dictionary<int, List<string>> myDict = _badgeRepository.DisplayBadges(); // Needed for displaying Badges for door
             int BadgeNum;
             string DoorAccess = "";
+
             Console.Write("What is the number on the badge of doors to change: ");
             BadgeNum = Convert.ToInt32(Console.ReadLine());
 
-            //loop for displaying all doors
-            foreach (string door in myDict[BadgeNum])
-            {
-                if (door != myDict[BadgeNum].Last())
-                    DoorAccess += door + ", ";
-                else
-                    DoorAccess += door;
-            }
-
+            DoorAccess = AccessReturn(DoorAccess, myDict, BadgeNum);
+          
             Console.WriteLine($"{BadgeNum} has acess to doors {DoorAccess}");
 
             DisplayEditMenu();
             GetEditResponse(BadgeNum);
 
             DoorAccess = "";
-            
-            Dictionary<int, List<string>> myDict2 = _badgeRepository.DisplayBadges(); // Needed for displaying Badges for door
-            
-            foreach(string door in myDict2[BadgeNum])
+            DoorAccess = AccessReturn(DoorAccess, myDict, BadgeNum);
+    
+            Console.WriteLine($"{BadgeNum} has acess to doors {DoorAccess}");
+            Thread.Sleep(2000);
+        }
+
+        private string AccessReturn(string doors,Dictionary<int,List<string>> dict,int badge)
+        {
+            foreach (string door in dict[badge])
             {
-                if (door != myDict2[BadgeNum].Last())
-                    DoorAccess += door + ", ";
+                if (door != dict[badge].Last())
+                    doors += door + ", ";
                 else
-                    DoorAccess += door;
+                    doors += door;
             }
-                
+
+            return doors;
         }
 
         private void ListBadges()
         {
             //list all badges view
-            Dictionary<int,List<string>> myDict =_badgeRepository.DisplayBadges();
-            
+            Dictionary<int, List<string>> myDict = _badgeRepository.DisplayBadges();
+
+            Console.WriteLine("Current Badges with attached Door Access\n\n");
+
             Console.WriteLine("{0,-10}{1,-10}", "Badge #", "Door Access");
-            for(int i=0;i < myDict.Count;i++)
+            Console.WriteLine("{0,-10}{1,-10}", "========", "===========");
+            for (int i = 0; i < myDict.Count; i++)
             {
                 string Values = "";
                 foreach (string mystring in myDict[myDict.Keys.ElementAt(i)])
@@ -204,14 +218,14 @@ namespace _03_KomodoBadges
                     else
                         Values += mystring + ", ";
                 }
-                Console.WriteLine("{0,-10}{1,-10}", myDict.Keys.ElementAt(i),Values);
+                Console.WriteLine("{0,-10}{1,-10}", myDict.Keys.ElementAt(i), Values);
             }
         }
 
         private void seedValues()
         {
             _badgeRepository.AddBadge(new Badge(12345, new List<string>() { "A7", "B4" }));
-            _badgeRepository.AddBadge(new Badge(22345, new List<string>() { "A1", "A4","B1","B2" }));
+            _badgeRepository.AddBadge(new Badge(22345, new List<string>() { "A1", "A4", "B1", "B2" }));
             _badgeRepository.AddBadge(new Badge(32345, new List<string>() { "A4", "A5" }));
         }
     }

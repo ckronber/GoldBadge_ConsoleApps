@@ -28,19 +28,19 @@ namespace _03_KomodoBadges
         }
 
         //Update
-        public bool UpdateBadgebyKey(int key,string door,bool AddRemove)
+        public List<string> UpdateBadgebyKey(int key,string door,bool AddRemove)
         {
             int count = _badgeRepo[key].Count;
             List<string> myList = _badgeRepo[key];
             if (AddRemove == true)
             {
                 myList.Add(door);
-                return _badgeRepo[key].Count > count ? true : false;
+                return myList;
             }
             else
             {
                 myList.Remove(door);
-                return _badgeRepo[key].Count < count ? true : false;
+                return myList;
             }
         }
     }

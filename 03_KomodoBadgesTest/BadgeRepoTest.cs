@@ -36,27 +36,48 @@ namespace KomodoBadgesTest
         [TestMethod]
         public void UpdateRemoveDoor_ShouldReturnBool()
         {
-            bool wasUpdated;
+            List<string> UpdatedList;
+            bool updated = true;
             Badge myBadge = new Badge(12334, new List<string> { "C3", "D5" });
             BadgeRepository badgeRepo = new BadgeRepository();
             badgeRepo.AddBadge(myBadge);
 
-            wasUpdated = badgeRepo.UpdateBadgebyKey(12334, "D5", false);
+            UpdatedList = badgeRepo.UpdateBadgebyKey(12334, "D5", false);
 
-            Assert.IsTrue(wasUpdated);
+            foreach(string door in UpdatedList)
+            {
+                if (door == "D5")
+                {
+                    updated = false;
+                    break;
+                }
+            }
+
+            Assert.IsTrue(updated);
         }
 
         [TestMethod]
         public void UpdateAddDoor_ShouldReturnBool()
         {
-            bool wasUpdated;
+            List<string> UpdatedList;
+            bool updated = false;
+            string DoorToAdd = "G6";
             Badge myBadge = new Badge(12334, new List<string> { "C3", "D5" });
             BadgeRepository badgeRepo = new BadgeRepository();
             badgeRepo.AddBadge(myBadge);
 
-            wasUpdated = badgeRepo.UpdateBadgebyKey(12334, "G6", true);
+            UpdatedList = badgeRepo.UpdateBadgebyKey(12334, DoorToAdd, true);
 
-            Assert.IsTrue(wasUpdated);
+            foreach (string door in UpdatedList)
+            {
+                if (door == DoorToAdd)
+                {
+                    updated = true;
+                    break;
+                }
+            }
+
+            Assert.IsTrue(updated);
         }
     }
 }
