@@ -32,7 +32,8 @@ Them Menu Items Include:
 - List of Ingredients
 - Price
 
-- ![Display In Console](..\Challenge1\DisplayMenu.jpg)
+- ![Display In Console](MainMenu.jpg)
+- ![Display In Console](DisplayMenu.jpg)
 
 ```csharp
 
