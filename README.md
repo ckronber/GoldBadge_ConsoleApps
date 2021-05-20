@@ -52,54 +52,41 @@ Claims Displayed in Console
 
 ![Display In Console](DisplayClaims.jpg)
 
-```csharp
-
-```
-
 ## Komodo Insurance Badges
 The Komodo Insurance Badges is a Console app that connects badges to doors. The user can add doors to a badge nuber, Update the badge to add or remove a door from the badge. 
 The user can also Show all of the badges with the doors in which they have access.
 
 Main Menu for Badges in Console
 
-![Display In Console](BadgesMenu.jpg)
+![Display Badges Menu](BadgesMenu.jpg)
 
 Badges Displayed in Console
 
-![Display In Console](DisplayBadges.jpg)
+![Display Badges In Console](DisplayBadges.jpg)
 
-```csharp
-
-```
 
 ## Komodo Company Outings
 Komodo company outings console app takes financial information from the company outings and stores them in a list. This list is then able to be acced to be able to show the amount of money spent on different types of outings. It also shows the Total amount spent on Outings.
 
 Main Menu for Badges in Console
 
-![Display In Console](OutingMenu.jpg)
+![OutingsMenu](OutingMenu.jpg)
 
 Badges Displayed in Console
 
-![Display In Console](CostCalcOuting.jpg)
+![CostsCalculated](CostCalcOuting.jpg)
 
-```csharp
 
-```
 ## Komodo Insurance Email Problem
 Komodo Insurance wants to make a spam bot. They hired me to do it and I think I have a product they can use. It is not quite fully functional yet but it will get there. 
 
 Main Menu for Badges in Console
 
-![Display In Console](SpamMenu.jpg)
+![SpamMenu](SpamMenu.jpg)
 
-Badges Displayed in Console
+Spam Email Addresses Displayed in Console
 
-![Display In Console](ReadSpam.jpg)
-
-```csharp
-
-```
+![SpamCustomers](ReadSpam.jpg)
 
 ## Contributing
 Pull requests are welcome.
