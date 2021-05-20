@@ -62,6 +62,7 @@ namespace _03_KomodoBadges
                         break;
                     default:
                         Console.WriteLine("Choose a number between 1 and 4");
+                        Thread.Sleep(1000);
                         break;
                 }
             }

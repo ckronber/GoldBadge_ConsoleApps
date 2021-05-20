@@ -75,12 +75,13 @@ namespace GoldBadge_ConsoleApps
                         break;
                     default:
                         Console.WriteLine("Choose a number between 1 and 5");
+                        Thread.Sleep(1000);
                         break;
                 }
             } catch (Exception e)
             {
                 Console.WriteLine(e.Message);
-                Thread.Sleep(3300);
+                Thread.Sleep(1000);
             }
             
         }
@@ -110,7 +111,6 @@ namespace GoldBadge_ConsoleApps
 
             foreach(string Ingredient in IngredientList)
                 _cafeMenuItem.Ingredients.Add(Ingredient); //reads from the user the ingredient they would like to add
-
     
             //Add or Update price for the Menu Item
             Console.WriteLine("Enter the price of the Menu Item");

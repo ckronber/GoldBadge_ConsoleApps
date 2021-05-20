@@ -51,7 +51,7 @@ namespace KomodoClaimsDepartment
                     case 2:
                         Console.Clear();
                         TakeCareofClaims();
-                        ClearAfterKeypress();
+                        Thread.Sleep(2000);
                         break;
                     case 3:
                         Console.Clear();
@@ -63,6 +63,7 @@ namespace KomodoClaimsDepartment
                         break;
                     default:
                         Console.Write("Choose a number between 1 and 4");
+                        Thread.Sleep(1000);
                         break;
                 }
             }
@@ -80,7 +81,6 @@ namespace KomodoClaimsDepartment
             Console.Clear();
         }
 
-        
         private void SeeClaims()
         {
             List<Claim> claimArray = _claimRepo.ReadQueue();
@@ -94,7 +94,10 @@ namespace KomodoClaimsDepartment
 
         private void TakeCareofClaims()
         {
+            bool isDealt;
+            string answer;
             Claim myClaim = _claimRepo.GetNext();
+
             if (myClaim != null)
             {
                 Console.WriteLine($"ClaimID: {myClaim.ClaimID}\n" +
@@ -104,10 +107,17 @@ namespace KomodoClaimsDepartment
                     $"DateOfClaim: {myClaim.DateOfClaim.ToShortDateString()}\n" +
                     $"isValid: {myClaim.IsValid}\n");
 
-                Console.WriteLine("\n Do you want to deal with this claim now? (y/n): ");
-
-                if (Console.ReadLine() == "y" || Console.ReadLine() == "Y")
-                    _claimRepo.DeleteQueue();
+                Console.Write("\n Do you want to deal with this claim now? (y/n): ");
+                answer = Console.ReadLine();
+                if (answer == "y" || answer == "Y")
+                {
+                    isDealt = _claimRepo.DeleteQueue();
+                    Console.WriteLine("\nClaim Has Been Dealt with by Jared from State Farm");
+                }
+                else
+                {
+                    Console.WriteLine("\nI dont really want deal with it either =)");
+                }
             }
             else
             {
