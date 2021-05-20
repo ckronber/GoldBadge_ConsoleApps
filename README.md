@@ -29,10 +29,12 @@ Them Menu Class Includes:
 - Price
 
 Main Menu for Cafe in Console
-- ![Display In Console](MainMenu.jpg)
+
+![Display In Console](MainMenu.jpg)
 
 All Menu Items Displayed in Console
-- ![Display In Console](DisplayMenu.jpg)
+
+![Display In Console](DisplayMenu.jpg)
 
 ```csharp
 
@@ -43,10 +45,12 @@ The Komodo Claims Challenge was to create an Insurance Console app to Create, Re
 It also removes or dequeues the items when the user enters 'y'. if they enter 'n' it will not be removed and go back to the menu.
 
 Main Menu for Claims in Console
-- ![Display In Console](ClaimsMainMenu.jpg)
+
+![Display In Console](ClaimsMainMenu.jpg)
 
 Claims Displayed in Console
-- ![Display In Console](DisplayClaims.jpg)
+
+![Display In Console](DisplayClaims.jpg)
 
 ```csharp
 
@@ -57,20 +61,27 @@ The Komodo Insurance Badges is a Console app that connects badges to doors. The 
 The user can also Show all of the badges with the doors in which they have access.
 
 Main Menu for Badges in Console
-- ![Display In Console](BadgesMenu.jpg)
+
+![Display In Console](BadgesMenu.jpg)
 
 Badges Displayed in Console
-- ![Display In Console](DisplayBadges.jpg)
+
+![Display In Console](DisplayBadges.jpg)
 
 ```csharp
 
 ```
 
 ## Komodo Company Outings
+Komodo company outings console app takes financial information from the company outings and stores them in a list. This list is then able to be acced to be able to show the amount of money spent on different types of outings. It also shows the Total amount spent on Outings.
+
+
 ```csharp
 
 ```
 ## Komodo Insurance Email Problem
+Komodo Insurance wants to make a spam bot. They hired me to do it and I think I have a product they can use. It is not quite fully functional yet but it will get there. 
+
 ```csharp
 
 ```
