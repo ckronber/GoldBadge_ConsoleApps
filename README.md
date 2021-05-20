@@ -36,9 +36,6 @@ All Menu Items Displayed in Console
 
 ![Display In Console](DisplayMenu.jpg)
 
-```csharp
-
-```
 ## Komodo Claims Department
 
 The Komodo Claims Challenge was to create an Insurance Console app to Create, Read, show the item to be removed from the queue.
