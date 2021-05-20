@@ -65,11 +65,11 @@ Badges Displayed in Console
 ## Komodo Company Outings
 Komodo company outings console app takes financial information from the company outings and stores them in a list. This list is then able to be acced to be able to show the amount of money spent on different types of outings. It also shows the Total amount spent on Outings.
 
-Main Menu for Badges in Console
+Main Menu for Company Outings in Console
 
 ![OutingsMenu](OutingMenu.jpg)
 
-Badges Displayed in Console
+Costs Displayed in Console
 
 ![CostsCalculated](CostCalcOuting.jpg)
 
@@ -77,7 +77,7 @@ Badges Displayed in Console
 ## Komodo Insurance Email Problem
 Komodo Insurance wants to make a spam bot. They hired me to do it and I think I have a product they can use. It is not quite fully functional yet but it will get there. 
 
-Main Menu for Badges in Console
+Main Menu Email Spam Bot in Console
 
 ![SpamMenu](SpamMenu.jpg)
 
