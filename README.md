@@ -2,20 +2,24 @@
 
 Console Apps Added
 1. Komodo Cafe
-2. Komodo 
+2. Komodo Claims Department
+3. Komodo Insurance Badges
+4. Komodo Company Outings
+5. Komodo Insurance Email Problem
 
 
 ## Installation
 
-Use the package manager [pip](https://pip.pypa.io/en/stable/) to install foobar.
+1. Click the Green Code Button in this repository
+2. Choose from the following options:
+   - Copy the Link and Use it to clone in Visual Studio 
+   - Click the Open in Visual Studio Button
+   - Click Download to download all files
 
-```bash
-pip install foobar
-```
 
 ## Usage
 
-```python
+```csharp
 import foobar
 
 foobar.pluralize('word') # returns 'words'
@@ -24,6 +28,4 @@ foobar.singularize('phenomena') # returns 'phenomenon'
 ```
 
 ## Contributing
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
-
-Please make sure to update tests as appropriate.
+Pull requests are welcome.
